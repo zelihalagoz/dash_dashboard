@@ -1,0 +1,9 @@
+# packages in environment at /opt/miniconda3/envs/py310:
+#
+# Name                    Version                   Build  Channel
+# packages in environment at /opt/miniconda3/envs/py310:
+pandas  
+plotly
+dash
+dash_bootstrap_components
+wordcloud
