@@ -136,7 +136,7 @@ def generate_genre_percent_figure(filtered_df):
     fig_genre_percent = px.pie(genre_counts, 
                                values=genre_counts.values, 
                                names=genre_counts.index,
-                               hover_data=["genre1", genre_counts.values])
+                               hover_data=[genre_counts.index, genre_counts.values])
     fig_genre_percent.update_traces(
         hovertemplate="<br>".join([
             "Genre: %{label}",
