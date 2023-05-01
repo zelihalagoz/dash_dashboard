@@ -50,6 +50,7 @@ df2["decade"] = df["year"] // 10 * 10
 
 # Create Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 app.title = "IMDb Top 250 Movies"
 
 # Function to generate Ratings Distribution figure
