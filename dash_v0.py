@@ -163,9 +163,6 @@ def generate_yearly_ratings_figure(filtered_df):
     )
     return fig_yearly_ratings
 
-# Group the DataFrame by year and genre and count the number of movies
-#movies_by_genre_year = df2.groupby(['year', 'genre1']).size().reset_index(name='Count')
-
 #function to generate yearly genre figure
 def generate_yearly_genre_figure(filtered_df):
     movies_by_genre_year = filtered_df.groupby(['year', 'genre1']).size().reset_index(name='Count')
@@ -209,15 +206,6 @@ def generate_top_dir_map_figure(filtered_df):
     )
     return fig_top_dir_map
 
-
-# Movie Duration Distribution==========???????????
-fig_duration = px.histogram(df, x="run_time", nbins=20)
-fig_duration.update_layout(
-    title="Movie Duration Distribution",
-    xaxis_title="Duration (minutes)",
-    yaxis_title="Count"
-)
-
 #function to generate fig_genre_decade
 def generate_genre_decade_figure(filtered_df):
     movies_by_genre_decade = filtered_df.groupby(['decade', 'genre1']).size().reset_index(name='Count')
@@ -242,6 +230,7 @@ def generate_wordcloud_figure(filtered_df):
 
 #generate genre list
 genre_list = ['All Genres'] + list(df2['genre1'].sort_values().unique())
+
 #generate year list
 year_list = ['All Years'] + list(df2['year'].sort_values(ascending=False).unique())
 
@@ -428,7 +417,6 @@ def update_figures(genre_value, year_value):
             fig_genre,     
             fig_top_dir_map,
             fig_wordcloud)
-
 
 # Run the app
 if __name__ == "__main__":
